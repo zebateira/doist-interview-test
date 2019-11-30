@@ -1,4 +1,4 @@
-import styled, { css, createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 export const GlobalStyles = createGlobalStyle`
@@ -10,14 +10,8 @@ export const GlobalStyles = createGlobalStyle`
 
     body {
         background: ${(props) => props.theme.colors.background};
+        font-family: Verdana, Geneva, sans-serif;
     }
-`;
-
-export const contentSpace = css`
-    margin: 0 auto;
-    max-width: 960px;
-    padding-left: 1.0875rem;
-    padding-right: 1.0875rem;
 `;
 
 export const App = styled.div`
@@ -28,8 +22,5 @@ export const App = styled.div`
 
 export const Main = styled.main`
     flex-grow: 2;
-    ${contentSpace}
     padding-top: 0;
-
-    color: ${(props) => props.theme.colors.text};
 `;

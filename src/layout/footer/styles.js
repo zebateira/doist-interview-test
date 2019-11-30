@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { contentSpace } from '../styles';
+import { contentSpace } from '../../shared/styles/layout';
 
 export const FooterContainer = styled.footer`
     width: 100%;

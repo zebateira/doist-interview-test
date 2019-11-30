@@ -2,11 +2,16 @@ import React from 'react';
 
 import Layout from '../layout';
 import Seo from '../shared/components/seo';
+import NewsList from '../shared/components/news-list';
 
-const IndexPage = () => (
-    <Layout>
-        <Seo title="Home" />
-    </Layout>
-);
+function IndexPage() {
+    return (
+        <Layout>
+            <Seo title="Home" />
+            <NewsList />
+        </Layout>
+
+    );
+}
 
 export default IndexPage;

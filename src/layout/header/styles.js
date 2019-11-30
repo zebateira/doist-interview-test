@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { contentSpace } from '../styles';
+import { contentSpace } from '../../shared/styles/layout';
 
 export const Container = styled.header`
     background: ${(props) => props.theme.colors.primary};
