@@ -12,8 +12,8 @@ module.exports = {
             /* eslint-disable camelcase */
             resolve: 'gatsby-plugin-manifest',
             options: {
-                name: 'Hacker News',
-                short_name: 'hacker_news',
+                name: 'Hacker News - Doist Interview Test',
+                short_name: 'Hacker News',
                 start_url: '/',
                 background_color: theme.colors.primary,
                 theme_color: theme.colors.primary,
