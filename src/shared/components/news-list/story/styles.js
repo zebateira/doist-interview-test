@@ -52,6 +52,10 @@ export const LinkTitle = styled.a`
     &:hover, &:active, &:focus {
         text-decoration: underline;
     }
+
+    &:visited {
+        color: ${(props) => props.theme.colors.textSub};
+    }
 `;
 
 export const Author = styled.div`

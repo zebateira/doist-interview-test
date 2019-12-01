@@ -24,6 +24,8 @@ export const StyledLink = styled(({ className, siteTitle }) => (
         {siteTitle}
     </Link>
 ))`
+    font-weight: bold;
+    font-size: 26px;
     color: ${(props) => props.theme.colors.text};
     text-decoration: none;
 `;

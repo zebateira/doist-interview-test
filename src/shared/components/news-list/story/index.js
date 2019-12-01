@@ -17,7 +17,7 @@ function Story({ index, data: { id, url, title, by, time } }) {
                     { title }
                 </Styles.LinkTitle>
                 <Styles.Author>
-                    <span>by</span>
+                    <span>by </span>
                     <Styles.AuthorLink href={ `https://news.ycombinator.com/user?id=${by}` }>
                         { by }
                     </Styles.AuthorLink>

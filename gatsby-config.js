@@ -2,8 +2,8 @@ const theme = require('./src/shared/theme');
 
 module.exports = {
     siteMetadata: {
-        title: 'Doist Test Project (Hacker News)',
-        description: 'Doist interview test project using Hacker News API',
+        title: 'Hacker News',
+        description: 'Hacker News - Doist interview test project using Hacker News API',
         author: '@zebateira',
     },
     plugins: [
@@ -12,8 +12,8 @@ module.exports = {
             /* eslint-disable camelcase */
             resolve: 'gatsby-plugin-manifest',
             options: {
-                name: 'Doist Test Project',
-                short_name: 'doist_test_project',
+                name: 'Hacker News',
+                short_name: 'hacker_news',
                 start_url: '/',
                 background_color: theme.colors.primary,
                 theme_color: theme.colors.primary,

@@ -6,7 +6,7 @@ function Footer() {
     return (
         <Styles.FooterContainer>
             <Styles.FooterContentContainer>
-                <Styles.FooterLink href="https://www.doist.com">Doist</Styles.FooterLink>
+                <Styles.FooterLink href="https://doist.com">Doist</Styles.FooterLink>
             </Styles.FooterContentContainer>
         </Styles.FooterContainer>
     );
