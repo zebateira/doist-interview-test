@@ -10,6 +10,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
 
 import theme from '../shared/theme';
+import useSystemTheme from '../shared/hooks/use-system-theme';
 import Header from './header';
 import Footer from './footer';
 import * as Styles from './styles';
@@ -24,9 +25,10 @@ function Layout({ children }) {
             }
         }
     `);
+    const systemTheme = useSystemTheme();
 
     return (
-        <ThemeProvider theme={ theme }>
+        <ThemeProvider theme={ theme[systemTheme || 'light'] }>
             <>
                 <Styles.GlobalStyles />
                 <Styles.App id="app">

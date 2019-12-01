@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
+import { transitionTheme } from '../../../styles/animations';
+
 // In animation for each item
 const inAnimation = keyframes`
     0% {
@@ -14,6 +16,7 @@ const inAnimation = keyframes`
 
 // Main container of the story item
 export const Container = styled.div`
+    position: relative;
     display: flex;
 
     padding: 20px;
@@ -23,15 +26,28 @@ export const Container = styled.div`
     animation-duration: 250ms;
     animation-play-state: running;
 
-    background-color: #f0f0f0;
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        background-color: ${(props) => props.theme.colors.backgroundLighter};
+        ${transitionTheme};
+    }
 `;
 
 // Story index.
 // e.g. 1.
 export const Index = styled.div`
     padding-right: 8px;
-    color: ${(props) => props.theme.colors.text};
+    color: ${(props) => props.theme.colors.primaryDark};
     font-size: 20px;
+
+    ${transitionTheme};
 
     &::after {
         content: ".";
@@ -51,8 +67,10 @@ export const LinkTitle = styled.a`
     flex-basis: 100%;
     margin-bottom: 10px;
 
-    color: ${(props) => props.theme.colors.text};
+    color: ${(props) => props.theme.colors.primaryDark};
     font-size: 20px;
+
+    ${transitionTheme};
 
     text-decoration: none;
 
@@ -68,13 +86,15 @@ export const LinkTitle = styled.a`
 // Author wrapper
 export const Author = styled.div`
     margin-right: 5px;
-    color: #a0a0a0;
+    color: ${(props) => props.theme.colors.textSecondary};
+    ${transitionTheme};
 `;
 
 // Link to the author page
 export const AuthorLink = styled.a`
     color: ${(props) => props.theme.colors.textSub};
 
+    ${transitionTheme};
     text-decoration: none;
 
     &:hover, &:active, &:focus {
@@ -84,8 +104,9 @@ export const AuthorLink = styled.a`
 
 // Timestamp that should link to the story url
 export const TimeLink = styled.a`
-    color: #a0a0a0;
+    color: ${(props) => props.theme.colors.textSecondary};
 
+    ${transitionTheme};
     text-decoration: none;
 
     &:hover, &:active, &:focus {

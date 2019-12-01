@@ -2,11 +2,14 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
+import { transitionTheme } from '../../shared/styles/animations';
 import { contentSpace } from '../../shared/styles/layout';
 
 export const Container = styled.header`
     background: ${(props) => props.theme.colors.primary};
     color: ${(props) => props.theme.colors.text};
+
+    ${transitionTheme};
 `;
 
 export const Content = styled.div`

@@ -1,6 +1,8 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
+import { transitionTheme } from '../shared/styles/animations';
+
 export const GlobalStyles = createGlobalStyle`
     ${reset}
 
@@ -11,6 +13,8 @@ export const GlobalStyles = createGlobalStyle`
     body {
         background: ${(props) => props.theme.colors.background};
         font-family: Verdana, Geneva, sans-serif;
+
+        ${transitionTheme};
     }
 `;
 
