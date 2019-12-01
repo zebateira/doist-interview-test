@@ -4,8 +4,10 @@
 
 ```sh
 $ npm install
-$ npm start
+$ npm start # open localhost:8000
 ```
+
+Tested on NodeJs 12.
 
 ## Test offline mode
 
