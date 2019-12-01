@@ -45,6 +45,7 @@ export default function useGetItems() {
             fetchItem();
         } else if (loading && items.length > max) {
             setLoading(false);
+            setMax((max) => max + 10);
         }
     }, [loading, max, fetching, items]);
 

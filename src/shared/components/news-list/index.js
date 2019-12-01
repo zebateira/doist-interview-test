@@ -1,4 +1,5 @@
 import React from 'react';
+import { Waypoint } from 'react-waypoint';
 
 import useGetItems from '../../hooks/use-get-items';
 import Story from './story';
@@ -16,7 +17,7 @@ function NewsList() {
                     <Story key={ item.id } data={ item } index={ index } />
                 ))
             }
-            <button onClick={ loadMore }>load more</button>
+            <Waypoint onEnter={ loadMore } bottomOffset="-60%" />
         </Styles.Container>
     );
 }
