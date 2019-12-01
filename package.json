@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/zebateira/doist-interview-test#readme",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.6",
     "date-fns": "^2.8.1",
     "gatsby": "^2.18.5",
     "gatsby-plugin-manifest": "^2.2.30",
@@ -38,6 +37,7 @@
   },
   "devDependencies": {
     "@moxy/eslint-config": "^9.1.2",
+    "babel-plugin-styled-components": "^1.10.6",
     "eslint": "^6.7.1"
   }
 }
