@@ -1,31 +1,21 @@
-import axios from 'axios';
 import urlJoin from 'proper-url-join';
 
 import config from './config';
 
-const cache = {};
+export default async function request({ path }) {
+    const url = urlJoin(
+        config.hackerNews.api.baseUrl,
+        config.hackerNews.api.version,
+        `${path}.json`,
+    );
 
-// TODO: Deal with hackernews api failing
-export default async function request({ path, ...params }) {
-    const requestParams = {
-        method: 'get',
-        url: urlJoin(
-            config.hackerNews.api.baseUrl,
-            config.hackerNews.api.version,
-            `${path}.json`,
-        ),
-        ...params,
-    };
+    const response = await fetch(url);
 
-    const cacheHit = cache[JSON.stringify(requestParams)];
+    if (response.status !== 200) {
+        console.error(`ERROR: request failed. status code = ${response.status}`);
 
-    if (cacheHit) {
-        return cacheHit;
+        return;
     }
 
-    const response = await axios(requestParams);
-
-    cache[JSON.stringify(requestParams)] = response.data;
-
-    return response.data;
+    return response.json();
 }

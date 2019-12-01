@@ -13,16 +13,16 @@ function Story({ index, data: { id, url, title, by, time } }) {
                 { index + 1 }
             </Styles.Index>
             <Styles.Content>
-                <Styles.LinkTitle href={ url }>
+                <Styles.LinkTitle href={ url } target="_blank">
                     { title }
                 </Styles.LinkTitle>
                 <Styles.Author>
                     <span>by </span>
-                    <Styles.AuthorLink href={ `https://news.ycombinator.com/user?id=${by}` }>
+                    <Styles.AuthorLink href={ `https://news.ycombinator.com/user?id=${by}` } target="_blank">
                         { by }
                     </Styles.AuthorLink>
                 </Styles.Author>
-                <Styles.TimeLink href={ `https://news.ycombinator.com/item?id=${id}` }>
+                <Styles.TimeLink href={ `https://news.ycombinator.com/item?id=${id}` } target="_blank">
                     { timeDuration }
                 </Styles.TimeLink>
             </Styles.Content>
