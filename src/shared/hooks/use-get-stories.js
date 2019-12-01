@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 import config from '../config';
 import api from '../api';
 
-// Last item id fetched
-let itemId = 0;
+// Top New Stories Ids fetched
+let newStoriesIds = [];
+// Index of the last story fetched
+let lastStoryIndexFetched = 0;
 
 /*
     Validates if a story is valid. Must be:
@@ -22,13 +24,13 @@ export function isValidStory(item) {
 
     onItemFetch: guarantees we can react as soon as an item has been fetched.
  */
-export async function fetchNextItems({ onItemFetch }) {
-    itemId = itemId ? itemId - 1 : await api.getMaxItem();
+export async function fetchNextStories({ onItemFetch }) {
+    newStoriesIds = newStoriesIds.length ? newStoriesIds : await api.getNewStoriesIds();
     const fetchItemsPromises = [];
 
     for (let i = 0; i < config.logic.concurrency; i += 1) {
-        fetchItemsPromises.push(api.getItem({ id: itemId }).then(onItemFetch));
-        itemId -= 1;
+        fetchItemsPromises.push(api.getItem({ id: newStoriesIds[lastStoryIndexFetched] }).then(onItemFetch));
+        lastStoryIndexFetched += 1;
     }
 
     return Promise.all(fetchItemsPromises);
@@ -55,7 +57,7 @@ export default function useGetStories() {
         async function fetchItems() {
             setFetchingItems(true);
 
-            await fetchNextItems({
+            await fetchNextStories({
                 // When each item finishes fetching, add it to the stories list if valid.
                 onItemFetch: (newItem) => (
                     isValidStory(newItem) &&

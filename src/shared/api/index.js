@@ -5,10 +5,10 @@
 import request from './request';
 
 /*
-    https://github.com/HackerNews/API#max-item-id
- */
-async function getMaxItem() {
-    return parseInt(await request({ path: '/maxitem' }), 10);
+    https://github.com/HackerNews/API#new-top-and-best-stories
+*/
+async function getNewStoriesIds() {
+    return request({ path: '/newstories' });
 }
 
 /*
@@ -19,6 +19,6 @@ function getItem({ id }) {
 }
 
 export default {
-    getMaxItem,
+    getNewStoriesIds,
     getItem,
 };
