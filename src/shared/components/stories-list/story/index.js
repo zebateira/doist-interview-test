@@ -1,3 +1,7 @@
+/*
+    Story component that renders a story item.
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { formatDistance } from 'date-fns';
@@ -5,6 +9,7 @@ import { formatDistance } from 'date-fns';
 import * as Styles from './styles.js';
 
 function Story({ index, data: { id, url, title, by, time } }) {
+    // e.g. 5 minutes ago
     const timeDuration = formatDistance(new Date(time * 1e3), new Date(), { addSuffix: true });
 
     return (

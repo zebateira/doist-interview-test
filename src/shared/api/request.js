@@ -1,13 +1,8 @@
-import urlJoin from 'proper-url-join';
+import config from '../config';
 
-import config from './config';
-
+// Performs a single request to the Hacker News API using the Fetch API
 export default async function request({ path }) {
-    const url = urlJoin(
-        config.hackerNews.api.baseUrl,
-        config.hackerNews.api.version,
-        `${path}.json`,
-    );
+    const url = `${config.api.baseUrl}/${config.api.version}${path}.json`;
 
     const response = await fetch(url);
 

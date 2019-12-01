@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
+// In animation for each item
 const inAnimation = keyframes`
     0% {
         opacity: 0;
@@ -11,6 +12,7 @@ const inAnimation = keyframes`
     }
 `;
 
+// Main container of the story item
 export const Container = styled.div`
     display: flex;
 
@@ -24,6 +26,8 @@ export const Container = styled.div`
     background-color: #f0f0f0;
 `;
 
+// Story index.
+// e.g. 1.
 export const Index = styled.div`
     padding-right: 8px;
     color: ${(props) => props.theme.colors.text};
@@ -34,11 +38,14 @@ export const Index = styled.div`
     }
 `;
 
+// Content wrapper includes all the content next to the index: title, author and time
 export const Content = styled.div`
     display: flex;
     flex-wrap: wrap;
 `;
 
+// Link to the story title.
+// Includes visited state.
 export const LinkTitle = styled.a`
     display: flex;
     flex-basis: 100%;
@@ -58,11 +65,13 @@ export const LinkTitle = styled.a`
     }
 `;
 
+// Author wrapper
 export const Author = styled.div`
     margin-right: 5px;
     color: #a0a0a0;
 `;
 
+// Link to the author page
 export const AuthorLink = styled.a`
     color: ${(props) => props.theme.colors.textSub};
 
@@ -73,6 +82,7 @@ export const AuthorLink = styled.a`
     }
 `;
 
+// Timestamp that should link to the story url
 export const TimeLink = styled.a`
     color: #a0a0a0;
 

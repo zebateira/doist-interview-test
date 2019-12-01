@@ -1,3 +1,7 @@
+/*
+    API Module.
+    Simple js bindings for Hacker News API
+ */
 import request from './request';
 
 /*
@@ -7,20 +11,14 @@ async function getMaxItem() {
     return parseInt(await request({ path: '/maxitem' }), 10);
 }
 
+/*
+    https://github.com/HackerNews/API#items
+ */
 function getItem({ id }) {
     return request({ path: `/item/${id}` });
-}
-
-function getItemsFromIds({ ids, mapFunction }) {
-    return Promise.all(ids.map((id) => getItem({ id }).then(async (item) => {
-        await mapFunction(item);
-
-        return item;
-    })));
 }
 
 export default {
     getMaxItem,
     getItem,
-    getItemsFromIds,
 };

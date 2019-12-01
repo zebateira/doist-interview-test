@@ -1,5 +1,10 @@
 import { css } from 'styled-components';
 
+/*
+    Content space.
+
+    Used to center all content within the same layout spacing.
+ */
 export const contentSpace = css`
     margin: 0 auto;
     max-width: 960px;

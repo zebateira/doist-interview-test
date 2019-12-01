@@ -1,16 +1,18 @@
+/*
+    Index page (aka home page)
+ */
 import React from 'react';
 
 import Layout from '../layout';
 import Seo from '../shared/components/seo';
-import NewsList from '../shared/components/news-list';
+import StoriesList from '../shared/components/stories-list';
 
 function IndexPage() {
     return (
         <Layout>
             <Seo title="Home" />
-            <NewsList />
+            <StoriesList />
         </Layout>
-
     );
 }
 
