@@ -20,7 +20,7 @@ export function isValidStory(item) {
 }
 
 /*
-    Fetches the next items givem the last id used as per the global variable itemId.
+    Fetches the next stories given the last newStoriesIds list fetched from Hacker News API.
 
     onItemFetch: guarantees we can react as soon as an item has been fetched.
  */
