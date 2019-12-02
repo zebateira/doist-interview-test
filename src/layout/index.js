@@ -8,9 +8,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
+import useSystemTheme from 'react-use-system-theme';
 
 import theme from '../shared/theme';
-import useSystemTheme from '../shared/hooks/use-system-theme';
 import Header from './header';
 import Footer from './footer';
 import * as Styles from './styles';
